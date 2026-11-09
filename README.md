@@ -10,6 +10,11 @@ agent> transfer 2 USDC to 0xa982…45f0? max fee 0.012983954 MON [y/N] y
 agent> done: https://testnet.monadvision.com/tx/0xc4cc8d09…
 ```
 
+- **WDK** (Wallet Development Kit by Tether): JavaScript modules for self-custodial wallets. One seed phrase derives accounts on EVM chains like Monad, plus Solana, TON, Tron and more. Keys stay with the user, never with a server.
+- **QVAC** (local AI SDK by Tether): runs AI models on the user's own device: LLM chat with tool calling, speech-to-text, text-to-speech, translation, embeddings/RAG and OCR, in Node.js or Expo. No API key, no cloud.
+
+Together: QVAC decides what to do, WDK signs and sends it. Inference and signing both happen on your machine; only the signed transaction leaves it.
+
 Full guide: **https://devnads.com/wdk**
 
 ## Quick start
