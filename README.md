@@ -14,7 +14,7 @@ Full guide: **https://devnads.com/wdk**
 
 ## Quick start
 
-Requires Node.js 22+. QVAC ships prebuilds for macOS, Linux and Windows (x64 + arm64); a GPU is optional. Verified so far on Linux arm64 (CPU only, 2 cores: ~5–8 s per agent reply). A laptop should be faster.
+Requires Node.js 22+. QVAC ships prebuilds for macOS, Linux and Windows (x64 + arm64); a GPU is optional. Verified so far on Linux arm64 (CPU only, 2 cores: ~4–8 s per agent reply). A laptop should be faster.
 
 ```bash
 git clone https://github.com/portdeveloper/wdk-qvac-monad-starter
