@@ -51,7 +51,7 @@ Add a capability to the agent = add one entry to `TOOLS` in `src/agent.js` (sche
 
 1. **Back-to-back sends reuse nonces.** Monad's public RPC reports the same `pending` and `latest` nonce (it doesn't count txs still in the mempool). WDK uses the `pending` nonce, so two sends fired within ~200 ms get the same one. Identical txs are **silently deduplicated** (same hash returned, only one lands); different ones fail with `nonce has already been used` or `could not coalesce error`. `src/wallet.js` serializes writes and waits for each receipt (~0.4–1 s on Monad). If you call `wallet.account.sendTransaction()` directly, you bypass this.
 2. **Quoted fee is a ceiling.** WDK quotes `gasLimit × maxFeePerGas` (≈2× base fee + tip). A plain MON send quotes 0.004242 MON and is charged 0.002142 MON.
-3. **Monad charges for the gas limit, not gas used.** WDK sets the limit from `eth_estimateGas`, so a tight estimate keeps this cheap. Don't hardcode big `gasLimit`s.
+3. **Monad charges for the gas limit, not gas used.** WDK sets the limit from `eth_estimateGas`, so a tight estimate keeps this cheap. Don't hardcode big `gasLimit`s. ([Monad docs](https://docs.monad.xyz/developer-essentials/gas-pricing))
 4. **Empty wallets can't quote.** With 0 MON, `quote*` fails with `missing revert data` (the RPC rejects gas estimation for "insufficient balance"). Fund first.
 5. **Public RPCs are rate limited.** Set `MONAD_RPC_URL` to your own endpoint if you hit 429s.
 
