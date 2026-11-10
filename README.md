@@ -79,7 +79,7 @@ examples/qvac-agent/       optional QVAC agent, own package.json so the 2 GB ins
 ## Security
 
 - `.env` holds your seed phrase. It's gitignored and created with `0600` permissions. Never commit it, never paste it in Discord.
-- The agent always asks before any on-chain write. Keep it that way: small models do misread amounts.
+- The agent always asks before any on-chain write. Keep it that way: small models do misread amounts. In testing, "pay 1 usdt" once came back as a 0.5 USDT transfer; only the confirmation prompt shows it.
 - Use a fresh, low-balance wallet for hackathon demos, especially on mainnet.
 
 ## Tested with
