@@ -35,7 +35,7 @@ Use the wallet in your own code:
 ```js
 import { createWallet } from './src/wallet.js'
 
-const wallet = await createWallet()              // reads WDK_SEED + MONAD_NETWORK from env
+const wallet = await createWallet()              // reads WDK_SEED + MONAD_NETWORK from env (node --env-file=.env)
 console.log(wallet.address, await wallet.balances())
 const { url } = await wallet.transfer('USDC', '0x…', '5')
 await wallet.sendTransaction({ to: contract, data }) // any contract call
