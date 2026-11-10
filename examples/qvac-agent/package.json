@@ -1,0 +1,15 @@
+{
+  "name": "qvac-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Optional: local AI wallet agent (QVAC) on top of the starter's WDK wallet",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=../../.env agent.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@qvac/sdk": "0.23.0",
+    "zod": "4.6.7"
+  }
+}

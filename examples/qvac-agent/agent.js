@@ -4,7 +4,7 @@ import readline from 'node:readline/promises'
 import { completion, loadModel, unloadModel, QWEN3_1_7B_INST_Q4 } from '@qvac/sdk'
 import { isAddress } from 'ethers'
 import { z } from 'zod'
-import { createWallet } from './wallet.js'
+import { createWallet } from '../../src/wallet.js'
 
 const wallet = await createWallet()
 const net = wallet.network

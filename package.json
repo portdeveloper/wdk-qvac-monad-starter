@@ -2,7 +2,7 @@
   "name": "wdk-qvac-monad-starter",
   "version": "0.1.0",
   "private": true,
-  "description": "Hackathon starter: Tether WDK self-custodial wallet + QVAC local AI agent on Monad",
+  "description": "Hackathon starter: Tether WDK self-custodial wallets on Monad, with an optional QVAC local AI agent",
   "type": "module",
   "engines": {
     "node": ">=22"
@@ -12,15 +12,14 @@
     "balance": "node --env-file=.env scripts/balance.js",
     "send": "node --env-file=.env scripts/send.js",
     "mint": "node --env-file=.env scripts/mint.js",
-    "agent": "node --env-file=.env src/agent.js",
-    "test:burst": "node --env-file=.env scripts/burst.js"
+    "test:burst": "node --env-file=.env scripts/burst.js",
+    "agent:install": "npm --prefix examples/qvac-agent install",
+    "agent": "npm --prefix examples/qvac-agent start"
   },
   "license": "MIT",
   "dependencies": {
-    "@qvac/sdk": "0.23.0",
     "@tetherto/wdk": "1.0.0-beta.22",
     "@tetherto/wdk-wallet-evm": "1.0.0-beta.25",
-    "ethers": "6.17.0",
-    "zod": "4.6.7"
+    "ethers": "6.17.0"
   }
 }
